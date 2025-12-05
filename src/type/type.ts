@@ -18,3 +18,11 @@ export type ButtonType={
     textColor?:string;
     buttonText:string;
 }
+
+export type User={
+    id:number;
+    username:string;
+    email:string;
+    password?:string;
+    age?:number;
+}
