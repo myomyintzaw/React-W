@@ -5,6 +5,7 @@ export default function UseEffect() {
   const [posts, setPosts] = useState<Post[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   console.log("posts", posts);
+
   const [count, setCount] = useState(0);
   const [name, setName] = useState("Rose");
 
@@ -45,7 +46,7 @@ export default function UseEffect() {
       <p>name:{name}</p>
       <button onClick={() => setName("bobo")}>Set Name</button>
       <br></br>
-      <button onClick={() => setCount(count + 1)}>Count</button>
+      <button className="rounded-md bg-amber-300" onClick={() => setCount(count + 1)}>Count</button>
 
       <div className="grid grid-cols-3 gap-4">
         {loading &&

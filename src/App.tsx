@@ -18,9 +18,12 @@ import PostDetails from "./page/Posts/$id";
 import CreatePost from "./page/Posts/new";
 import EditPost from "./page/Posts/$id.edit";
 import HookDetails from "./page/Hooks/$slug";
+import Movies from "./components/Movies";
+import MovieDetails from "./components/MovieDetails";
 
 
 export default function App() {
+
   const navLinks: NavLinkType[] = [
     { id: 1, href: "/", text: "Home" },
     { id: 2, href: "/about", text: "About" },
@@ -31,11 +34,15 @@ export default function App() {
     // { id: 6, href: "/login", text: "Login" },
     // { id: 7, href: "/register", text: "Register" },
     { id: 7, href: "/posts", text: "Post" },
+    {id:8,href:"/movie", text:"Movie"},
   ];
+
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Nav navLinks={navLinks} />}>
+        <Route path="/" element={<Nav navLinks={navLinks} />}>   //This is navbar
+
 
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -67,6 +74,10 @@ export default function App() {
           <Route path="hook" element={<Hook />}>
             <Route path=":slug" element={<HookDetails />} />
           </Route>
+
+
+        <Route path="movie" element={<Movies />} />
+        <Route path="movies/:id" element={<MovieDetails />} />
 
 
         </Route>
