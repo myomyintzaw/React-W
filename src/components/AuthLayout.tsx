@@ -1,4 +1,4 @@
-import { Outlet } from "react-router";
+import { Link, Outlet } from "react-router";
 import type { BannerProps } from "../type/type";
 import Banner from "./Banner";
 
@@ -10,10 +10,10 @@ export default function AuthLayout() {
   };
   return (
     <>
-      {/* <ul className='flex gap-4 justify-center my-4'>  
+      <ul className='flex gap-4 justify-center my-4'>  
             <Link to="/auth/login">Login</Link> 
             <Link to="/auth/register">Register</Link>
-     </ul> */}
+     </ul>
 
       <Banner banner={banner} />
 

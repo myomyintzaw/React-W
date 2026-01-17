@@ -31,10 +31,10 @@ export default function App() {
     { id: 4, href: "/blog", text: "Blog" },
     { id: 5, href: "/hook", text: "Hook" },
     { id: 6, href: "/auth", text: "Auth" },
-    // { id: 6, href: "/login", text: "Login" },
-    // { id: 7, href: "/register", text: "Register" },
+    { id: 6, href: "/login", text: "Login" },
+    { id: 7, href: "/register", text: "Register" },
     { id: 7, href: "/posts", text: "Post" },
-    {id:8,href:"/movie", text:"Movie"},
+    { id:8,  href:"/movie", text:"Movie"},
   ];
 
 
@@ -53,11 +53,11 @@ export default function App() {
           <Route path="admin" element={<Dashboard />} />
           <Route path="*" element={<PageNotFound />} />
 
-          <Route path="/auth" element={<AuthLayout />}>
-            {/* <Route path="login" element={<Login />} /> */}
-            <Route index element={<Login />} />
+          {/* <Route path="/auth" element={<AuthLayout />}> */}
+            <Route path="login" element={<Login />} />
+            {/* <Route index element={<Login />} /> */}
             <Route path="register" element={<Register />} />
-          </Route>
+          {/* </Route> */}
 
           <Route path="/service" element={<Service />}>
             <Route path=":serviceId" element={<ServiceDetail />} />

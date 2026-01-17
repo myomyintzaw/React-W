@@ -1,5 +1,9 @@
+
+
 export default function Section() {
+  
   return (
+    
     <section className="h-screen bg-gray-100 flex items-center justify-center flex-col text-center">
       <h2 className="text-3xl font-bold mb-4">About React</h2>
       <p className="text-lg">
@@ -9,5 +13,10 @@ export default function Section() {
         Learn More
       </button>
     </section>
+
+
+
+
+   
   );
 }
