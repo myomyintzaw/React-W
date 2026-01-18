@@ -30,6 +30,10 @@ const Register: React.FC = () => {
     }));
   };
 
+
+
+ 
+ console.log(formData)
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError('');

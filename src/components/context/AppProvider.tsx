@@ -1,10 +1,10 @@
 
 import { AuthProvider } from "./AuthContext";
-import { UserProider } from "./authloginContext";
+import { UserProvider } from "./authloginContext";
 import { NameProvider } from "./NameContext";
 import { ThemeProvider } from "./ThemeContext";
 
-const providers = [NameProvider, ThemeProvider,AuthProvider,UserProider];
+const providers = [NameProvider, ThemeProvider,AuthProvider,UserProvider];
 
 export default function AppProvider({children}:{children:React.ReactNode}) {
   return (
