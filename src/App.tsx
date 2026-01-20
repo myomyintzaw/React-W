@@ -10,7 +10,7 @@ import PageNotFound from "./page/404";
 import Dashboard from "./page/Dashboard";
 import Login from "./page/Login";
 import ServiceDetail from "./page/ServiceDetail";
-import AuthLayout from "./components/AuthLayout";
+// import AuthLayout from "./components/AuthLayout";
 import Register from "./page/Register";
 import ServiceEdit from "./page/ServiceEdit";
 import Post from "./page/Posts";

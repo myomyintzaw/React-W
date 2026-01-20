@@ -1,7 +1,11 @@
 import type {BannerProps, } from "../type/type";
 import Banner from "./Banner";
 import { useName } from "./context/NameContext";
+import HelloReducer from "./reducer/HelloReducer";
 // import { useTheme } from "./context/ThemeContext";
+
+
+
 
 
 export default function Header() {
@@ -22,6 +26,7 @@ export default function Header() {
 
        Home Page <b>{name}</b>
     <button className=" text-green-500" onClick={()=>setName(name==="John Done"?"bobo":"John Done")}>Change Name</button>
+    <HelloReducer/>
     </header>
   );
 }

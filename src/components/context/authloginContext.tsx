@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/set-state-in-effect */
+/* eslint-disable react-refresh/only-export-components */
 // import { createContext, useContext, useEffect, useState, type ReactNode,  } from "react";
 // import { jwtDecode } from "jwt-decode";
 
@@ -81,7 +84,7 @@ import { jwtDecode } from "jwt-decode";
 import {
   createContext,
   useState,
-  ReactNode,
+  type ReactNode,
   useEffect,
   useContext,
 } from "react";

@@ -40,35 +40,45 @@ export default function Login() {
           body: JSON.stringify(formData)
         }
       );
-      console.log('response', response);
-      const { token } = await response.json();
-      console.log('token',token);
+      // console.log('response', response);
+      // console.log(jwtDecode(token));
+      // const { token } = await response.json();
+      // console.log('token',token);
       // console.log('data',data);
       // const token=data.token;
 
-      localStorage.setItem("token", token);
+      const responseData= await response.json();
 
-      // decode token to get user data
-      const decodedToken = jwtDecode<{ username: string; email: string; userId: number }>(token);
-      console.log("decodedToken",decodedToken);
-      // const decodedToken:any=jwtDecode(token);
-      // setUser(decodedToken.username,decodedToken.email,decodedToken.userId);
-      
+      if(response.ok){
+        const {token}=responseData;
+        localStorage.setItem("token", token);
+        
+       const decodedToken = jwtDecode<{username: string; email: string; userId: number }>(token);
+       console.log("decodedToken",decodedToken);
 
-      console.log('decodedToken', decodedToken);
       const { username, email, userId } = decodedToken;
       setUser(username, email, userId);
-
-      if (!response.ok) {
-        throw new Error('Login failed');
-      }
       navigate("/");
-    } catch (err) {
-      if (err instanceof Error) {
-        setError(err.message);
-      } else {
-        setError('Something went wrong');
+
+      // decode token to get user data
+      // const decodedToken:any=jwtDecode(token);
+      // setUser(decodedToken.username,decodedToken.email,decodedToken.userId);
+      }else{
+        setError(responseData.message || "Login failed");
       }
+    
+      // if (!response.ok) {
+      //   throw new Error('Login failed');
+      // }
+   
+    } catch (err) {
+      // if (err instanceof Error) {
+      //   setError(err.message);
+      // } else {
+      //   setError('Something went wrong');
+      // }
+      setError("Something went wrong");
+      console.error("Login error:",err);
     }
   };
 
